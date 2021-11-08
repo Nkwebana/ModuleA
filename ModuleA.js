@@ -12,7 +12,7 @@ function ModuleA({ message = "This is module A", handleStateUpdate }) {
   const changeGlobalState = () => {
     handleStateUpdate({
       name: "Buyisile",
-      mainColor: "red",
+      modulebBackgroundColor: "red",
       secondaryColor: "green",
     });
   };
