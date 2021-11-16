@@ -1,8 +1,8 @@
 {
   "name": "modulea-bn",
-  "version": "0.0.15",
+  "version": "0.0.17",
   "private": false,
-  "main": "ModuleA.js",
+  "main": "Login.js",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",

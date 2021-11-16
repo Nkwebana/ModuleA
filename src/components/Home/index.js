@@ -1,27 +1,55 @@
-import React from "react";
+/**
+ *
+ * Login
+ * 
+ */
+
+import React, { useState } from 'react';
+import {
+  TextInput,
+  StyleSheet,
+  Button,
+  View,
+} from 'react-native';
 import PropTypes from "prop-types";
-import { Button } from "react-native";
 
-import { StyledHome, StyledTitle } from "./styledComponents";
+function Home({ handleLogin }) {
+  const [username, setUsername] = useState(null);
+  const [password, setPassword] = useState(null);
 
-function Home({ message, changeGlobalState }) {
   return (
-    <StyledHome>
-      <StyledTitle>{message}</StyledTitle>
-
-      <Button
-        backgroundColor="red"
-        color="green"
-        title="Update"
-        onPress={() => changeGlobalState()}
+    <View>
+      <TextInput
+        style={styles.input}
+        onChangeText={setUsername}
+        value={username}
+        placeholder="Enter username"
       />
-    </StyledHome>
+
+      <TextInput
+        style={styles.input}
+        onChangeText={setPassword}
+        value={password}
+        placeholder="Enter password"
+      />
+
+      <Button title="Login" onPress={() => handleLogin({ username, password })} />
+    </View>
   );
-}
+};
 
 Home.propTypes = {
-  message: PropTypes.string,
-  changeGlobalState: PropTypes.func,
+  handleLogin: PropTypes.func,
 };
+
+const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
+});
+
 
 export default Home;
