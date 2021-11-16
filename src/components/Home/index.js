@@ -6,12 +6,12 @@
 
 import React, { useState } from 'react';
 import {
-  TextInput,
-  StyleSheet,
   Button,
   View,
 } from 'react-native';
 import PropTypes from "prop-types";
+
+import { StyledTextInput } from './styledComponents'
 
 function Home({ handleLogin }) {
   const [username, setUsername] = useState(null);
@@ -19,15 +19,13 @@ function Home({ handleLogin }) {
 
   return (
     <View>
-      <TextInput
-        style={styles.input}
+      <StyledTextInput
         onChangeText={setUsername}
         value={username}
         placeholder="Enter username"
       />
 
-      <TextInput
-        style={styles.input}
+      <StyledTextInput
         onChangeText={setPassword}
         value={password}
         placeholder="Enter password"
@@ -42,14 +40,7 @@ Home.propTypes = {
   handleLogin: PropTypes.func,
 };
 
-const styles = StyleSheet.create({
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-  },
-});
+
 
 
 export default Home;
