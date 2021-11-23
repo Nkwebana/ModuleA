@@ -9,9 +9,8 @@ import { SafeAreaView } from "react-native";
 import Home from "./src/components/Home";
 
 function Login({ handleLogin }) {
-
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       <Home handleLogin={handleLogin} />
     </SafeAreaView>
   );

@@ -10,9 +10,9 @@
     "test": "jest",
     "lint": "eslint ."
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "17.0.2",
-    "react-native": "0.66.2",
+    "react-native": "0.66.3",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
